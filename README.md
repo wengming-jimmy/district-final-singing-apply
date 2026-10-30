@@ -1,4 +1,4 @@
-# 獅友歌唱才藝比賽決賽｜專區代表名單（2026-10-30 已確認決賽資訊，待部署）
+# 獅友歌唱才藝比賽決賽｜專區代表名單（2026-10-30 已上線，實測通過、測試資料已清）
 
 標題：國際獅子會300Ａ-2區 2026～2027 年度 獅友歌唱才藝比賽 參加決賽-專區代表名單
 
@@ -18,4 +18,4 @@
 
 檔案：index.html（公開頁）、admin.html（後台，公開頁無連結、首次開自設密碼）、Code.gs（只放 Apps Script，不推公開庫）、config.js（部署後填 API_URL）。
 試算表（待建）：「獅友歌唱才藝比賽決賽專區代表名單」分頁「報名表」23 欄。
-預定公開庫／頁面（待建）：https://github.com/wengming-jimmy/district-final-singing-apply 、 https://wengming-jimmy.github.io/district-final-singing-apply/
+公開庫／頁面：https://github.com/wengming-jimmy/district-final-singing-apply 、 https://wengming-jimmy.github.io/district-final-singing-apply/
