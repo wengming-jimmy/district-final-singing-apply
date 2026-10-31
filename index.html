@@ -61,10 +61,6 @@ pre.confirm{white-space:pre-wrap;word-break:break-word;background:#faf8ff;border
 <h2 id="formTitle">報名資料</h2>
 <p class="lead" id="formLead"></p>
 <form id="f">
-<label for="club" id="clubLabel">報名分會 ＊</label>
-<input id="club" type="text" required placeholder="例如：台北市○○獅子會">
-<p class="small" id="clubNote" style="display:none">對唱組是跨分會組隊，這一欄可以不填，以下面團員名單裡每位團員的所屬分會為準。</p>
-
 <label for="zone">專區 ＊</label>
 <select id="zone" required>
 <option value="">請選專區</option><option>第一專區</option><option>第二專區</option><option>第三專區</option><option>第四專區</option><option>第五專區</option><option>第六專區</option><option>第七專區</option><option>第八專區</option><option>第九專區</option><option>第十專區</option><option>第十一專區</option><option>第十二專區</option><option>第十三專區</option>
@@ -86,8 +82,8 @@ pre.confirm{white-space:pre-wrap;word-break:break-word;background:#faf8ff;border
 <div id="photoPreview" class="photo-preview" style="display:none"><img id="photoImg" alt="參賽者照片預覽"><p class="small" id="photoInfo"></p></div>
 </div>
 <div id="chorusPhotoWrap" style="display:none">
-<label>團員照片 ＊（PPT 介紹用，每位團員各一張）</label>
-<p class="small">有填姓名的團員都要傳一張，臉要清楚、正面最好，決賽 PPT 介紹會用這些照片。順序跟上面團員名單同一排，送出前會自動縮到最長邊 1600px 再上傳。</p>
+<label>參賽者照片 ＊（PPT 介紹用，每位參賽者各一張）</label>
+<p class="small">有填姓名的參賽者都要傳一張，臉要清楚、正面最好，決賽 PPT 介紹會用這些照片。順序跟上面參賽者名單同一排，送出前會自動縮到最長邊 1600px 再上傳。</p>
 <div id="chorusPhotoRows"></div>
 </div>
 
@@ -107,23 +103,23 @@ pre.confirm{white-space:pre-wrap;word-break:break-word;background:#faf8ff;border
 </select>
 </div>
 <div id="duetJoinLunchWrap" style="display:none">
-<h2 style="margin-top:16px">對唱組團員入會日期與中午便當</h2>
-<p class="lead">兩位團員都要填入會日期（民國年）與中午便當，順序跟上面團員名單同一排。</p>
-<label>團員 1 入會日期 ＊（民國年）</label>
+<h2 style="margin-top:16px">對唱組參賽者入會日期與中午便當</h2>
+<p class="lead">兩位參賽者都要填入會日期（民國年）與中午便當，順序跟上面參賽者名單同一排。</p>
+<label>參賽者1 入會日期 ＊（民國年）</label>
 <div class="row3">
 <input id="djY1" type="number" min="1" max="200" placeholder="民國 年，例如 115">
 <input id="djM1" type="number" min="1" max="12" placeholder="月">
 <input id="djD1" type="number" min="1" max="31" placeholder="日">
 </div>
-<label for="djLunch1">團員 1 中午便當 ＊</label>
+<label for="djLunch1">參賽者1 中午便當 ＊</label>
 <select id="djLunch1"><option value="">請選</option><option>葷</option><option>素</option><option>不吃</option></select>
-<label>團員 2 入會日期 ＊（民國年）</label>
+<label>參賽者2 入會日期 ＊（民國年）</label>
 <div class="row3">
 <input id="djY2" type="number" min="1" max="200" placeholder="民國 年，例如 115">
 <input id="djM2" type="number" min="1" max="12" placeholder="月">
 <input id="djD2" type="number" min="1" max="31" placeholder="日">
 </div>
-<label for="djLunch2">團員 2 中午便當 ＊</label>
+<label for="djLunch2">參賽者2 中午便當 ＊</label>
 <select id="djLunch2"><option value="">請選</option><option>葷</option><option>素</option><option>不吃</option></select>
 </div>
 
@@ -150,8 +146,8 @@ pre.confirm{white-space:pre-wrap;word-break:break-word;background:#faf8ff;border
 <textarea id="keyNote" rows="3" placeholder="例如：降 2 Key"></textarea>
 
 <div id="chorusWrap" style="display:none">
-<h2 style="margin-top:16px">對唱組兩位團員</h2>
-<p class="lead">對唱組就是兩個人，兩位都要填姓名和所屬分會，可跨不同分會組隊，手機是選填。照片在下面「團員照片」區，兩位各傳一張。</p>
+<h2 style="margin-top:16px">對唱組兩位參賽者</h2>
+<p class="lead">對唱組就是兩個人，兩位都要填姓名和所屬分會，可跨不同分會組隊，手機是選填。照片在下面「參賽者照片」區，兩位各傳一張。註：以參賽者1為聯絡人。</p>
 <div id="chorusRows"></div>
 <p class="small">對唱總人數：<b id="chorusTotal">0</b> 人（對唱組固定 2 人，兩位都要填）。</p>
 </div>
@@ -163,7 +159,7 @@ pre.confirm{white-space:pre-wrap;word-break:break-word;background:#faf8ff;border
 </div>
 
 <p class="small"><b>填表提醒</b><br>
-1. 每一參賽節目填寫一張表；對唱組可由不同分會共同組隊，請逐一列出團員所屬分會。<br>
+1. 每一參賽節目填寫一張表；對唱組可由不同分會共同組隊，請逐一列出參賽者所屬分會。<br>
 2. 請確認歌曲語言、名稱、原唱歌手及實際伴唱版本；各組資格與賽制以正式公告為準。</p>
 
 <label style="display:flex;gap:10px;align-items:flex-start;line-height:1.6"><input type="checkbox" id="agree" required style="width:20px;height:20px;margin-top:3px"> 我已確認歌曲語言、名稱、原唱歌手及實際伴唱版本無誤。</label>
@@ -194,10 +190,10 @@ const chorusEl=$("chorusRows");
 const chorusPhotoEl=$("chorusPhotoRows");
 for(let i=1;i<=2;i++){
   const d=document.createElement("div"); d.className="chorus-row";
-  d.innerHTML="<span>"+i+"</span><input data-k='mname' placeholder='團員姓名 ＊'><input class='c2' data-k='mclub' placeholder='所屬獅子會／分會名稱 ＊'><input class='c3' data-k='mphone' type='tel' placeholder='聯絡電話（選填）'>";
+  d.innerHTML="<span>"+i+"</span><input data-k='mname' placeholder='參賽者姓名 ＊'><input class='c2' data-k='mclub' placeholder='所屬獅子會／分會名稱 ＊'><input class='c3' data-k='mphone' type='tel' placeholder='聯絡電話（選填）'>";
   chorusEl.appendChild(d);
   const p=document.createElement("div"); p.className="chorus-photo-row";
-  p.innerHTML="<label>團員 "+i+" 照片（跟上面第 "+i+" 位團員同一人）</label><input data-k='mphoto' type='file' accept='image/jpeg,image/png,image/webp'><p class='small' data-k='mphotoInfo'></p>";
+  p.innerHTML="<label>參賽者"+i+" 照片（跟上面參賽者"+i+"同一人）</label><input data-k='mphoto' type='file' accept='image/jpeg,image/png,image/webp'><p class='small' data-k='mphotoInfo'></p>";
   chorusPhotoEl.appendChild(p);
 }
 chorusPhotoEl.addEventListener("change",e=>{
@@ -217,16 +213,13 @@ document.querySelectorAll(".groupbtn").forEach(b=>{
     document.querySelectorAll(".groupbtn").forEach(x=>x.classList.toggle("active",x===b));
     $("groupNote").textContent="你選的是："+group+"，請往下填資料。";
     $("formTitle").textContent="報名資料（"+group+"）";
-    $("formLead").textContent=group==="對唱組"?"對唱組就是兩個人對唱，兩位都要填姓名和所屬分會。":group==="新人組"?"新人組是入會未滿一年，入會日期必填，請填民國年。其他組別入會日期也要填。":"請照紙本欄位填寫，歌曲資訊請再三確認。";
+    $("formLead").textContent=group==="對唱組"?"對唱組就是兩個人對唱，兩位都要填姓名和所屬分會。註：以參賽者1為聯絡人，確認信寄到上方 Email。":group==="新人組"?"新人組是入會未滿一年，入會日期必填，請填民國年。其他組別入會日期也要填。":"請照紙本欄位填寫，歌曲資訊請再三確認。";
     $("joinWrap").style.display=group==="對唱組"?"none":"block";
     $("lunchWrap").style.display=group==="對唱組"?"none":"block";
     $("duetJoinLunchWrap").style.display=group==="對唱組"?"block":"none";
     $("chorusWrap").style.display=group==="對唱組"?"block":"none";
     $("chorusPhotoWrap").style.display=group==="對唱組"?"block":"none";
     $("singlePhotoWrap").style.display=group==="對唱組"?"none":"block";
-    $("club").required=group!=="對唱組";
-    $("clubLabel").textContent=group==="對唱組"?"報名分會（對唱組可不填）":"報名分會 ＊";
-    $("clubNote").style.display=group==="對唱組"?"block":"none";
     $("photo").required=group!=="對唱組";
     $("formSec").style.display="block";
     $("formSec").scrollIntoView({behavior:"smooth"});
@@ -272,7 +265,7 @@ $("f").addEventListener("submit",async e=>{
   let phone=$("phone").value.trim().replace(/\s/g,"");
   if(/^09\d{8}$/.test(phone)) phone=phone.slice(0,4)+"-"+phone.slice(4,7)+"-"+phone.slice(7);
   let joinDate="", lunch="";
-  // 入會日期與便當：單人組填上面那一組，對唱組填兩位團員各自的（下面再組裝）
+  // 入會日期與便當：單人組填上面那一組，對唱組填兩位參賽者各自的（下面再組裝）
   let lang=$("lang").value;
   if(lang==="其他") lang="其他："+$("langOther").value.trim();
   let members="", total=0, memberNames=[];
@@ -281,12 +274,12 @@ $("f").addEventListener("submit",async e=>{
       const n=r.querySelector("[data-k='mname']").value.trim();
       const c=r.querySelector("[data-k='mclub']").value.trim();
       const p=r.querySelector("[data-k='mphone']").value.trim();
-      if(n && !c){ alert("對唱組第 "+(idx+1)+" 位團員請填所屬分會。"); throw new Error("missing club"); }
+      if(n && !c){ alert("對唱組第 "+(idx+1)+" 位參賽者請填所屬分會。"); throw new Error("missing club"); }
       if(n) memberNames.push(n);
       return n? n+"（"+c+"）"+(p?"，電話："+p:"") : "";
     }).filter(Boolean);
     members=rows.join("\n"); total=rows.length;
-    if(total!==2){ alert("對唱組請填兩位團員，兩位都要填姓名和所屬分會。"); return; }
+    if(total!==2){ alert("對唱組請填兩位參賽者，兩位都要填姓名和所屬分會。"); return; }
   }
   if(group==="對唱組"){
     const dj=[
@@ -294,8 +287,8 @@ $("f").addEventListener("submit",async e=>{
       {y:$("djY2").value.trim(), m:$("djM2").value.trim(), d:$("djD2").value.trim(), lunch:$("djLunch2").value}
     ];
     for(let i=0;i<2;i++){
-      if(!dj[i].y||!dj[i].m||!dj[i].d){ alert("對唱組第 "+(i+1)+" 位團員請填入會日期（民國年、月、日都要填）。"); return; }
-      if(!dj[i].lunch){ alert("對唱組第 "+(i+1)+" 位團員請選中午便當。"); return; }
+      if(!dj[i].y||!dj[i].m||!dj[i].d){ alert("對唱組第 "+(i+1)+" 位參賽者請填入會日期（民國年、月、日都要填）。"); return; }
+      if(!dj[i].lunch){ alert("對唱組第 "+(i+1)+" 位參賽者請選中午便當。"); return; }
     }
     joinDate=dj.map((x,i)=>memberNames[i]+"：民國"+x.y+"年"+x.m+"月"+x.d+"日").join("；");
     lunch=dj.map((x,i)=>memberNames[i]+"："+x.lunch).join("；");
@@ -307,7 +300,7 @@ $("f").addEventListener("submit",async e=>{
     if(!lunch){ alert("請選中午便當。"); return; }
   }
   const data={
-    group:group, club:$("club").value.trim(), zone:$("zone").value,
+    group:group, zone:$("zone").value,
     name:$("name").value.trim(), phone:phone, email:$("email").value.trim(),
     joinDate:joinDate, lunch:lunch, song:$("song").value.trim(), lang:lang,
     singer:$("singer").value.trim(), version:$("version").value.trim(),
@@ -316,7 +309,7 @@ $("f").addEventListener("submit",async e=>{
     filler:$("filler").value.trim(), fillerPhone:$("fillerPhone").value.trim(), fillDate:$("fillDate").value
   };
   const missing=[];
-  (group==="對唱組"?["zone","name","phone","email","song","lang","singer","sound"]:["club","zone","name","phone","email","song","lang","singer","sound"]).forEach(k=>{ if(!data[k]) missing.push(k); });
+  (group==="對唱組"?["zone","name","phone","email","song","lang","singer","sound"]:["zone","name","phone","email","song","lang","singer","sound"]).forEach(k=>{ if(!data[k]) missing.push(k); });
   if(missing.length){ alert("還有必填欄位沒填，請檢查後再送出。"); return; }
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){ alert("Email 格式不對，請檢查後再送出。"); return; }
   if(!$("agree").checked){ alert("請勾選已確認歌曲資訊。"); return; }
@@ -328,7 +321,7 @@ $("f").addEventListener("submit",async e=>{
       const photoInputs=[...chorusPhotoEl.querySelectorAll("[data-k='mphoto']")];
       for(let i=0;i<memberNames.length;i++){
         const f=photoInputs[i] && photoInputs[i].files[0];
-        if(!f){ alert("對唱組第 "+(i+1)+" 位團員（"+memberNames[i]+"）請上傳一張照片，決賽 PPT 介紹要用。"); $("submitBtn").disabled=false; $("submitBtn").textContent="✅ 送出報名表"; return; }
+        if(!f){ alert("對唱組第 "+(i+1)+" 位參賽者（"+memberNames[i]+"）請上傳一張照片，決賽 PPT 介紹要用。"); $("submitBtn").disabled=false; $("submitBtn").textContent="✅ 送出報名表"; return; }
         const cp=await compressPhoto(f);
         photos.push({ memberName:memberNames[i], name:cp.name, mime:cp.mime, data:cp.data });
       }

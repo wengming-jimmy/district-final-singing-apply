@@ -35,14 +35,14 @@ pre.confirm{white-space:pre-wrap;word-break:break-word;background:#fdf6ec;border
 <div id="adminBody" style="display:none">
 <section>
 <h2>📋 歌唱比賽報名名單</h2>
-<p class="lead">版本 2026-10-30 決賽版。預設顯示全部報名，選組別／分區或打關鍵字可以篩選；匯出會只匯出目前看到的這批。</p>
+<p class="lead">版本 2026-10-30 修改版（第一欄改專區、對唱組改參賽者1／參賽者2）。預設顯示全部報名，選組別／分區或打關鍵字可以篩選；匯出會只匯出目前看到的這批。</p>
 <div class="row">
 <div><label for="qGroup">按組別篩選</label>
 <select id="qGroup"><option value="">全部組別</option><option>對唱組</option><option>獨唱組</option><option>長青組</option><option>新人組</option></select></div>
 <div><label for="qZone">按專區篩選</label>
 <select id="qZone"><option value="">全部專區</option><option>第一專區</option><option>第二專區</option><option>第三專區</option><option>第四專區</option><option>第五專區</option><option>第六專區</option><option>第七專區</option><option>第八專區</option><option>第九專區</option><option>第十專區</option><option>第十一專區</option><option>第十二專區</option><option>第十三專區</option></select></div>
 </div>
-<input id="qName" type="text" placeholder="🔍 分會、參賽者、歌曲、原唱歌手關鍵字（可不填）">
+<input id="qName" type="text" placeholder="🔍 專區、參賽者、歌曲、原唱歌手關鍵字（可不填）">
 <p class="small" id="dbNote">正在準備載入…</p>
 <p class="small" id="count"></p>
 <button class="ghost" id="btnReload">🔄 從資料庫重新載入</button>
@@ -67,13 +67,13 @@ function render(){
   let list=allRows;
   if(g) list=list.filter(r=>r.group===g);
   if(z) list=list.filter(r=>r.zone===z);
-  if(q) list=list.filter(r=>(r.club+r.name+r.song+r.singer+r.members).includes(q));
+  if(q) list=list.filter(r=>(r.name+r.song+r.singer+r.members).includes(q));
   viewRows=list;
   $("count").textContent="目前共 "+allRows.length+" 筆，篩到 "+list.length+" 筆。";
-  $("list").innerHTML=list.length?list.map(r=>`<div class="item"><b>${esc(r.song)}</b> ・ ${esc(r.group)} ・ ${esc(r.club)} ${esc(r.zone)} <span class="badge ${r.status==="已確認"?"ok":"wait"}">${esc(r.status)}</span><br>
+  $("list").innerHTML=list.length?list.map(r=>`<div class="item"><b>${esc(r.song)}</b> ・ ${esc(r.group)} ・ ${esc(r.zone)} <span class="badge ${r.status==="已確認"?"ok":"wait"}">${esc(r.status)}</span><br>
   <span class="small">參賽者／聯絡人：${esc(r.name)} ・ ${esc(r.phone)} ・ ${esc(r.email)}<br>
   語言：${esc(r.lang)} ・ 原唱：${esc(r.singer)} ・ 版本／演唱者：${esc(r.version)||"—"} ・ 音源：${esc(r.sound)}<br>
-  ${r.joinDate?"入會日期："+esc(r.joinDate)+"<br>":""}${r.lunch?"中午便當："+esc(r.lunch)+"<br>":""}${r.total?"對唱總人數："+esc(r.total)+" 人<br>":""}${r.members?"團員名單：<br>"+esc(r.members).replace(/\n/g,"<br>")+"<br>":""}${r.keyNote?"升降Key／備註："+esc(r.keyNote)+"<br>":""}
+  ${r.joinDate?"入會日期："+esc(r.joinDate)+"<br>":""}${r.lunch?"中午便當："+esc(r.lunch)+"<br>":""}${r.total?"對唱總人數："+esc(r.total)+" 人<br>":""}${r.members?"參賽者名單：<br>"+esc(r.members).replace(/\n/g,"<br>")+"<br>":""}${r.keyNote?"升降Key／備註："+esc(r.keyNote)+"<br>":""}
   ${r.photo?`參賽者照片（PPT 用）：${String(r.photo).split("\n").filter(Boolean).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">點開看照片${String(r.photo).split("\n").filter(Boolean).length>1?" "+(i+1):""}</a>`).join("、")}<br>`:"參賽者照片：—（未上傳）<br>"}
   分會填表人：${esc(r.filler)||"—"} ・ ${esc(r.fillerPhone)||"—"} ・ 填表日期：${esc(r.fillDate)||"—"}<br>
   填寫時間：${esc(r.createdAt)}</span>
@@ -86,8 +86,8 @@ $("qName").addEventListener("input",render);
 $("btnReload").onclick=loadDb;
 $("btnExport").onclick=()=>{
   if(!viewRows.length){alert("目前沒有可以匯出的紀錄。");return;}
-  const rows=[["填寫時間","報名組別","報名分會","專區","參賽者／聯絡人姓名","手機","Email","入會日期","中午便當","參賽歌曲名稱","歌曲語言類別","原唱歌手","版本／演唱者","演唱與音源","升降Key／備註","對唱團員名單","對唱總人數","分會填表人","分會填表人電話","填表日期","報名狀態","參賽者照片"]];
-  viewRows.forEach(r=>rows.push([r.createdAt,r.group,r.club,r.zone,r.name,r.phone,r.email,r.joinDate,r.lunch,r.song,r.lang,r.singer,r.version,r.sound,r.keyNote,r.members,r.total,r.filler,r.fillerPhone,r.fillDate,r.status,r.photo]));
+  const rows=[["填寫時間","報名組別","專區","參賽者／聯絡人姓名","手機","Email","入會日期","中午便當","參賽歌曲名稱","歌曲語言類別","原唱歌手","版本／演唱者","演唱與音源","升降Key／備註","對唱參賽者名單","對唱總人數","分會填表人","分會填表人電話","填表日期","報名狀態","參賽者照片"]];
+  viewRows.forEach(r=>rows.push([r.createdAt,r.group,r.zone,r.name,r.phone,r.email,r.joinDate,r.lunch,r.song,r.lang,r.singer,r.version,r.sound,r.keyNote,r.members,r.total,r.filler,r.fillerPhone,r.fillDate,r.status,r.photo]));
   const csv="\ufeff"+rows.map(x=>x.map(c=>`"${String(c??"").replace(/"/g,'""')}"`).join(",")).join("\n");
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
   a.download="獅友歌唱才藝比賽決賽專區代表名單.csv";a.click();URL.revokeObjectURL(a.href);
